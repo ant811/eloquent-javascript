@@ -29,7 +29,7 @@ function chessboard(size) {
 
 module.exports = chessboard;
 
-// console.log(chessboard(13));
+// console.log(chessboard(8));
 //  # # # #
 // # # # #
 //  # # # #
