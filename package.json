@@ -1,0 +1,22 @@
+{
+  "name": "eloquent-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ant811/eloquent-javascript.git"
+  },
+  "author": "Tony Burroughs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ant811/eloquent-javascript/issues"
+  },
+  "homepage": "https://github.com/ant811/eloquent-javascript#readme",
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
+}
