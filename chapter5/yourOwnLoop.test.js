@@ -8,5 +8,5 @@ test('Loop iterates and terminates when expected', () => {
     }
   });
 
-  expect(JSON.stringify(multiplesOfThree)).toBe(JSON.stringify([21, 18, 15, 12, 9, 6]));
+  expect(multiplesOfThree).toEqual([21, 18, 15, 12, 9, 6]);
 });

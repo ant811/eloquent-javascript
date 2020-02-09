@@ -2,34 +2,34 @@ const { arrayToList, listToArray, prepend, nth, recursiveNth } = require('./list
 
 describe('arrayToList', () => {
   test('Returns a list of array values', () => {
-    expect(JSON.stringify(arrayToList([10, 20]))).toBe(JSON.stringify({value: 10, rest: {value: 20, rest: null}}));
-    expect(JSON.stringify(arrayToList([10, 20, 30]))).toBe(JSON.stringify({value: 10, rest: {value: 20, rest: {value: 30, rest: null}}}));
+    expect(arrayToList([10, 20])).toEqual({value: 10, rest: {value: 20, rest: null}});
+    expect(arrayToList([10, 20, 30])).toEqual({value: 10, rest: {value: 20, rest: {value: 30, rest: null}}});
   });  
   
   test('Returns an empty object when an empty array or non-array is passed in as an argument', () => {
-    expect(JSON.stringify(arrayToList([]))).toBe(JSON.stringify({}));
-    expect(JSON.stringify(arrayToList({value: 1, rest: null}))).toBe(JSON.stringify({}));
+    expect(arrayToList([])).toEqual({});
+    expect(arrayToList({value: 1, rest: null})).toEqual({});
   });
 });
 
 describe('listToArray', () => {
   test('Returns an array of list values', () => {
-    expect(JSON.stringify(listToArray(arrayToList([10, 20, 30])))).toBe(JSON.stringify([10, 20, 30]));
-    expect(JSON.stringify(listToArray(arrayToList([10, 20])))).toBe(JSON.stringify([10, 20]));
-    expect(JSON.stringify(listToArray({value: 10, rest: {value: 20, rest: null}}))).toBe(JSON.stringify([10, 20]));
+    expect(listToArray(arrayToList([10, 20, 30]))).toEqual([10, 20, 30]);
+    expect(listToArray(arrayToList([10, 20]))).toEqual([10, 20]);
+    expect(listToArray({value: 10, rest: {value: 20, rest: null}})).toEqual([10, 20]);
   });
 
   test('Returns an empty array when an empty object or non-object is passed in as an argument', () => {
-    expect(JSON.stringify(listToArray(arrayToList([])))).toBe(JSON.stringify([]));
-    expect(JSON.stringify(listToArray({}))).toBe(JSON.stringify([]));
-    expect(JSON.stringify(listToArray([3, 4, 5]))).toBe(JSON.stringify([]));
+    expect(listToArray(arrayToList([]))).toEqual([]);
+    expect(listToArray({})).toEqual([]);
+    expect(listToArray([3, 4, 5])).toEqual([]);
   });
 });
 
 describe('prepend', () => {
   test('Returns new list with item prepended to existing list', () => {
-    expect(JSON.stringify(prepend(10, prepend(20, null)))).toBe(JSON.stringify({value: 10, rest: {value: 20, rest: null}}));
-    expect(JSON.stringify(prepend(10, arrayToList([20, 30])))).toBe(JSON.stringify({value: 10, rest: {value: 20, rest: {value: 30, rest: null}}}));
+    expect(prepend(10, prepend(20, null))).toEqual({value: 10, rest: {value: 20, rest: null}});
+    expect(prepend(10, arrayToList([20, 30]))).toEqual({value: 10, rest: {value: 20, rest: {value: 30, rest: null}}});
   });
 });
 

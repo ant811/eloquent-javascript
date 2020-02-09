@@ -2,18 +2,18 @@ const { range, sum } = require('./sumOfRange');
 
 describe('range()', () => {
   test('Returns targeted range', () => {
-    expect(JSON.stringify(range(1, 10))).toBe(JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
-    expect(JSON.stringify(range(5, 2))).toBe(JSON.stringify([5, 4, 3, 2]));
-    expect(JSON.stringify(range(1, 10, 2))).toBe(JSON.stringify([1, 3, 5, 7, 9]));
-    expect(JSON.stringify(range(12, 3, -3))).toBe(JSON.stringify([12, 9, 6, 3]));
+    expect(range(1, 10)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+    expect(range(5, 2)).toEqual([5, 4, 3, 2]);
+    expect(range(1, 10, 2)).toEqual([1, 3, 5, 7, 9]);
+    expect(range(12, 3, -3)).toEqual([12, 9, 6, 3]);
   });
 
   test('Returns an empty array when range ascends with negative step', () => {
-    expect(JSON.stringify(range(1, 10, -3))).toBe(JSON.stringify([]));
+    expect(range(1, 10, -3)).toEqual([]);
   });
   
   test('Returns an empty array when range descends with positive step', () => {
-    expect(JSON.stringify(range(13, 2, 3))).toBe(JSON.stringify([]));
+    expect(range(13, 2, 3)).toEqual([]);
   });
 
   test('Returns NaN when a non-number is provided', () => {
