@@ -2,7 +2,7 @@ const SCRIPTS = require('./scripts');
 
 // VERSION 1: Not using countBy
 
-// Function characterScript is a function from Chapter 5 lession
+// Function characterScript is a function from Chapter 5 lesson
   // Changes: 
     // 1) Passes in length of text as parameter 
     // 2) Returns object with direction and length of text
@@ -32,7 +32,7 @@ const dominantDirection1 = (text) => {
 
 // VERSION 2: Using countBy
 
-// Function countBy is a function from Chapter 5 lession
+// Function countBy is a function from Chapter 5 lesson
   // Changes:
    // 1) Returns object abstracted from length-1 counts array
    // 2) groupName receives item.codePointAt(0) as the argument
@@ -52,7 +52,7 @@ function countBy(items, groupName) {
   return counts[0];
 }
 
-// Function characterScript is a function from Chapter 5 lession
+// Function characterScript is a function from Chapter 5 lesson
   // Changes:
     // 1) Returns direction property
 
