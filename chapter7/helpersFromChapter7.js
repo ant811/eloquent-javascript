@@ -115,4 +115,4 @@ VillageState.random = function(parcelCount = 5) {
   return new VillageState("Post Office", parcels);
 };
 
-module.exports = { goalOrientedRobot, routeRobot, VillageState };
+module.exports = { goalOrientedRobot, routeRobot, VillageState, findRoute, roadGraph };
