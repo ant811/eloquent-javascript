@@ -7,10 +7,9 @@ test('Returns instance of PGroup with expected values', () => {
   expect(ab instanceof PGroup).toBe(true);
 });
 
-test('Returns new instance of PGroup with current and new value', () => {
+test('Returns new instance of PGroup with current and new value, when value is not present', () => {
   let a = PGroup.empty.add('a');
   let ab = a.add('a');
-  expect(ab.values).toEqual(['a']);
   expect(ab).toBe(a);
   ab = a.add('b');
   let abc = ab.add('c');
@@ -20,12 +19,12 @@ test('Returns new instance of PGroup with current and new value', () => {
 
 test('Confirms existing values', () => {
   let a = PGroup.empty.add('a');
-  let ab = a.add("b");
+  let ab = a.add('b');
   expect(ab.has('a')).toBe(true);
   expect(ab.has('b')).toBe(true);
 });
 
-test('Returns new instance of PGroup without deleted value', () => {
+test('Returns new instance of PGroup without deleted value, when value is present', () => {
   let a = PGroup.empty.add('a');
   let ab = a.add('b');
   let noC = ab.delete('c');
